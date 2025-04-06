@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Credit Sea - Loan Management System
+## Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- User Registration and Authentication
+- Loan Application Submission
+- Loan Verification Process
+- Admin Dashboard
+- Real-time Application Status Tracking
+- Secure Document Upload
+- Multi-level Authorization System
 
-## Available Scripts
+## System Requirements
 
-In the project directory, you can run:
+- Node.js (v16 or higher)
+- MongoDB
+- React (v18 or higher)
+- npm or yarn package manager
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd credit-sea
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install dependencies:
+```bash
+# Install backend dependencies
+cd backend
+npm install
 
-### `npm test`
+# Install frontend dependencies
+cd ../frontend
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Configure environment variables:
+Create `.env` file in the backend directory with:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5111
+```
 
-### `npm run build`
+4. Start the application:
+```bash
+# Start backend server
+cd backend
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start frontend application (in a new terminal)
+cd frontend
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Access Credentials
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Admin Account
+- Email: admin@creditsea.com
+- Password: Admin@123
 
-### `npm run eject`
+### Verifier Account
+- Email: verifier@creditsea.com
+- Password: Verifier@123
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Test User Account
+- Email: user@example.com
+- Password: User@123
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## User Roles and Permissions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Admin
+- View all loan applications
+- Manage users and verifiers
+- Access system analytics
+- Final loan approval/rejection
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Verifier
+- Review loan applications
+- Request additional documents
+- Provide verification status
+- Add verification notes
 
-## Learn More
+### User
+- Submit loan applications
+- Track application status
+- Upload required documents
+- View loan history
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Authentication
+- POST /api/auth/login
+- POST /api/auth/register
 
-### Code Splitting
+### Loans
+- POST /api/loans - Create new loan application
+- GET /api/loans - Get all loans (Admin/Verifier)
+- GET /api/loans/:id - Get specific loan details
+- PUT /api/loans/:id - Update loan status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Users
+- GET /api/users - Get all users (Admin only)
+- PUT /api/users/:id - Update user details
+- DELETE /api/users/:id - Delete user (Admin only)
 
-### Analyzing the Bundle Size
+## Security Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- JWT Authentication
+- Password Encryption
+- Role-based Access Control
+- Input Validation
+- XSS Protection
+- Rate Limiting
