@@ -58,15 +58,15 @@ npm start
 
 ### Admin Account
 - Email: admin@creditsea.com
-- Password: Admin@123
+- Password: admin123
 
 ### Verifier Account
 - Email: verifier@creditsea.com
-- Password: Verifier@123
+- Password: verifier123
 
 ### Test User Account
-- Email: user@example.com
-- Password: User@123
+- Email: user@creditsea.com
+- Password: user123
 
 ## User Roles and Permissions
 
