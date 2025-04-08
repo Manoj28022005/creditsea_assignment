@@ -111,5 +111,3 @@ npm start
 - Password Encryption
 - Role-based Access Control
 - Input Validation
-- XSS Protection
-- Rate Limiting
